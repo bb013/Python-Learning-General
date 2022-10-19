@@ -1,10 +1,7 @@
 sh = input("Enter Hours: ")
-try:
-    fh = float(sh)
-except:
-    quit("input error, numeric numbers only")
 sr = input("Enter Rate: ")
 try:
+    fh = float(sh)
     fr = float(sr)
 except:
     quit("input error, numeric numbers only")
