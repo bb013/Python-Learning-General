@@ -1,1 +1,2 @@
 For the Scientific Computing With Python course found @ https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody
+Some of the excersise file names won't match the code they contain because sometimes they match the exercise on freecodecamp but at other times may match code found in the additional exercises linked from the lesson. Or may be tweaked code to my liking based upon the exercises.
