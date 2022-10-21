@@ -1,10 +1,12 @@
 # script calculates either the surface footage or the RPM depending on what is input.
 print("This program is used to callculate speeds and feeds for use in manufacturing\nAre you trying to find the surface feet per minute, 'sfm', or are you trying to find the revolutions per minute, 'rpm'?")
-var = input("Please type either 'sfm' or 'rpm', without quotes, and then press enter. Case sensitive: ")
+var = input("Please type either 'sfm' or 'rpm', without quotes, and then press enter: ")
+var = var.lower() # this accounts for case differences
 # section to account for input other than 'sfm' or 'rpm'
 while var not in ('sfm', 'rpm'):
     print('You typed something wrong')
-    var = input("Please type either 'sfm' or 'rpm', without quotes, and then press enter. Case sensitive: ")
+    var = input("Please type either 'sfm' or 'rpm', without quotes, and then press enter: ")
+    var = var.lower() # this accounts for case differences
 # end incorrect input section for sfm and rpm
 def diametertext():
     while var == 'rpm' or'sfm':

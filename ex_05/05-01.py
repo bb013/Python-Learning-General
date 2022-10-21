@@ -15,6 +15,7 @@ added=0
 count=0
 while True:
     number=input("Enter a number: ")
+    number=number.lower()# this accounts for case differences
     if number == "done":
         if count==0:
             quit("no datat entered")# this accounts for when "done" is the first thing entered.
