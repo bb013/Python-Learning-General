@@ -1,0 +1,1 @@
+Some projects from the 12 Beginner Python Projects - Coding Course found @ https://www.youtube.com/watch?v=8ext9G7xspg
