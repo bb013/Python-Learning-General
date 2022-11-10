@@ -16,13 +16,23 @@ def guess(x):
     print(f'Thats right! {secret_number} is the correct number!')
 guess(20)
 """
-### working on this section in 'temp.py'
-def computer_guess(lownumber,highnumber,mysecretnumber):
-    low=lownumber
-    high=highnumber
-    number_to_guess=mysecretnumber
-####
-
+def computer_guess(l,h,n):
+    lowguess = l
+    highguess = h
+    number_to_guess = n
+    while True:
+        c_guess = random.randrange(lowguess,highguess)
+        if c_guess == number_to_guess:
+            print(f'The compter has correctly guessed {number_to_guess}!')
+            break
+        if c_guess > number_to_guess:
+            print(f'the computer guessed high at {c_guess}')
+            highguess = c_guess
+            # print(f'high {highguess} low {lowguess} ')
+        if c_guess < number_to_guess:
+            print(f'The computer guessed low at {c_guess}')
+            lowguess = c_guess
+            # print(f'high {highguess} low {lowguess} ')
 while True:
     try:
         lownumber = int(input('Enter the lowest number for the range in which th computer will guess: '))

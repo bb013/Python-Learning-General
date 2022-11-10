@@ -7,15 +7,19 @@ number_to_guess=77
 # otherwise use the information of it being too small or large to redefine the range and guess again.
 
 def checkitout(l,h):
-    c_guess = random.randrange(l,h)
-    print(c_guess)
-    if c_guess == number_to_guess:
-        print(f'The compter has correctly guessed {number_to_guess}!')
-        quit()
-    while c_guess != number_to_guess:
+    lowguess = l
+    highguess = h
+    while True:
+        c_guess = random.randrange(lowguess,highguess)
+        if c_guess == number_to_guess:
+            print(f'The compter has correctly guessed {number_to_guess}!')
+            break
         if c_guess > number_to_guess:
-            print(f'the')
-
-
-
+            print(f'the computer guessed high at {c_guess}')
+            highguess = c_guess
+            #print(f'high {highguess} low {lowguess} ')
+        if c_guess < number_to_guess:
+            print(f'The computer guessed low at {c_guess}')
+            lowguess = c_guess
+            #print(f'high {highguess} low {lowguess} ')
 checkitout(low,high)
