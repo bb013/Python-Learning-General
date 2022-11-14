@@ -1,4 +1,7 @@
 # Sellect which day of the week the calendar starts on and then displays the callendar
+# Current selection is limited to Sunday or Monday
+# Didn't finish all days of the week because that wasn't the point of this experiment
+# Leaving parially done instead of deleting in case I wan't to come back and add other weedays
 import calendar
 def day_set(var):
     settheday = var
@@ -23,6 +26,7 @@ def day_set(var):
     mm = 11 # month
     # display the calendar
     print(calendar.month(yy, mm))
+#### modify this section for other days of the week
 x = input('Select M or S: ')
 x = str.lower(x)
 print(f'you selected {x}')
@@ -31,4 +35,5 @@ if x==('s'):var=6
 if x not in ('s', 'm'):
     print("some f'n thing went wrong")
     #quit()
+### end section to modify
 day_set(var)
