@@ -1,7 +1,7 @@
-# Sellect which day of the week the calendar starts on and then displays the callendar
+# Select which day of the week the calendar starts on and then displays the callendar
 # Current selection is limited to Sunday or Monday
 # Didn't finish all days of the week because that wasn't the point of this experiment
-# Leaving parially done instead of deleting in case I wan't to come back and add other weedays
+# Leaving parially done instead of deleting whole file in case I wan't to come back and add other weedays
 import calendar
 def day_set(var):
     settheday = var
