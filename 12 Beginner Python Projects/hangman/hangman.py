@@ -1,28 +1,30 @@
 import random
 import string
 from wordlist import words
+from hangman_visual import lives_visual_dict
 
 # selects a random word
 def get_valid_word(words):
     word=random.choice(words)
     while '-' in word or ' ' in word:
         word=random.choice(words)
-    return word
+    return word.upper()
 
 def hangman():
     word = get_valid_word(words)
     word_letters = set(word) # letter in the word
-    alphabet = list(string.ascii_uppercase) # creates a list of the uppercase alphabet
+    alphabet = set(string.ascii_uppercase) # creates a list of the uppercase alphabet
     used_letters = set() # what the user has guessed
-    deathcount = len(word)+2
-
-    # what current word is
-    word_list = [letter if letter in used_letters else '_' for letter in word]
+    lives = 7
 
     # get user input
-    while len(word_letters) > 0:
+    while len(word_letters) > 0 and lives > 0:
+        # what current word is
+        word_list = [letter if letter in used_letters else '-' for letter in word]
+        print(lives_visual_dict[lives])
+        print('Current word: ',' '.join(word_list))
         while True: # verifies valid input
-            user_letter = str(input('Enter a letter to guess: ')).upper()
+            user_letter = input('Enter a letter to guess: ').upper()
             if user_letter in used_letters:
                 print("You've already guessed that one")
                 print("You have used these letters: ", ' '.join(used_letters))
@@ -31,12 +33,21 @@ def hangman():
                 break
             print('Single letters only. Please try again ')
             continue
+
         if user_letter not in used_letters:
             used_letters.add(user_letter)
-            deathcount - 1
-        if user_letter in word_letters:
-            word_letters.remove(user_letter)
+            if user_letter in word_letters:
+                word_letters.remove(user_letter)
+            else:
+                lives = lives - 1
+                print(f'\nYour letter, {user_letter}, is not in the word. You have {lives} tries.')
 
+    # end of game
+    if lives == 0:
+        print(lives_visual_dict[lives])
+        print(f'The hangman has done his job. You lost. The word was {word}.')
+    else:
+        print(f'You guessed correctly! The word was {word}!')
 
-print('You lost.')
-print(f'The correct word was {word}.')
+if __name__ == '__main__':
+    hangman()
