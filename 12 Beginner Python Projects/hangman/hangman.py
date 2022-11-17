@@ -17,7 +17,6 @@ def hangman():
     used_letters = set() # what the user has guessed
     lives = len(word) + 3
     user_tries = 0
-
     # get user input
     while len(word_letters) > 0 and lives > 0:
         # what current word is
@@ -48,11 +47,11 @@ def hangman():
             else:
                 lives = lives - 1
                 print(f'\nYour letter, {user_letter}, is not in the word. You have {lives} tries.')
-
     # end of game
     if lives == 0:
         print(lives_visual_dict[lives])
         print(f'The hangman has done his job.\n You lost.\n The word was {word}.')
     else:
         print(f'You guessed correctly! The word was {word}!')
+
 hangman()
