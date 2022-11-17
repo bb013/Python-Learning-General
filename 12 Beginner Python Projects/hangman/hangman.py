@@ -15,14 +15,21 @@ def hangman():
     word_letters = set(word) # letter in the word
     alphabet = set(string.ascii_uppercase) # creates a list of the uppercase alphabet
     used_letters = set() # what the user has guessed
-    lives = 7
+    lives = len(word) + 3
+    user_tries = 0
 
     # get user input
     while len(word_letters) > 0 and lives > 0:
         # what current word is
         word_list = [letter if letter in used_letters else '-' for letter in word]
-        print(lives_visual_dict[lives])
+        if lives > 7:
+            print(lives_visual_dict[7])
+        else:
+            print(lives_visual_dict[lives])
         print('Current word: ',' '.join(word_list))
+        if user_tries > 0:
+                print("You have used these letters: ", ' '.join(used_letters))
+        user_tries = user_tries + 1
         while True: # verifies valid input
             user_letter = input('Enter a letter to guess: ').upper()
             if user_letter in used_letters:
@@ -45,9 +52,7 @@ def hangman():
     # end of game
     if lives == 0:
         print(lives_visual_dict[lives])
-        print(f'The hangman has done his job. You lost. The word was {word}.')
+        print(f'The hangman has done his job.\n You lost.\n The word was {word}.')
     else:
         print(f'You guessed correctly! The word was {word}!')
-
-if __name__ == '__main__':
-    hangman()
+hangman()
