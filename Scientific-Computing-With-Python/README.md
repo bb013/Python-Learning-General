@@ -1,2 +1,2 @@
 For the Scientific Computing With Python course found @ https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody
-Some of the excersise file names won't sync with the course videos because I often combine the exercise on freecodecamp and the code found in the additional exercises linked from the lesson. And sometimes the files may be tweaked to my liking based upon the exercises.
+Some of the exercise file names won't sync with the course videos because I often combine the exercise on freecodecamp and the code found in the additional exercises linked from the lesson. And sometimes the files may be tweaked to my liking based upon the exercises.
