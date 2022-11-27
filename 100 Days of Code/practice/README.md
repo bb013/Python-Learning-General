@@ -1,0 +1,1 @@
+Practice file and things I want to remember from the course 100 days of code
