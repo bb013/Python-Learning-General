@@ -1,1 +1,0 @@
-I needed to find the longest word in a list. This simple scrip does that for me.
