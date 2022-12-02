@@ -209,15 +209,14 @@ spock_art = '''
 # Spock vaporizes rock.\n\
 # Rock crushes scissors")
 
-rulls_list = ('Scissors cut paper.','Paper covers rock.','Rock crushes lizard.','Lizard poisons Spock.','Spock smashes scissors.','Scissors decapitates lizard.',\
-    'Lizard eats paper.','Paper disproves Spock.','Spock vaporizes rock.','Rock crushes scissors')
-random_list = (0,1,2,3,4)
-
 import random
+# list to call later
 art_list = (rock_art,paper_art,scissors_art,lizard_art,spock_art)
 choice_list = ('rock','paper','scissors','lizard','spock')
+
+# input with loop to catch and correct errors
 while True:
-    opponent = random.choice(random_list)
+    opponent = random.randint(0, 5)
     while True:
         try:
             player = int(input("Choose '0' for rock, '1' for paper, '2' for scissors, '3' for lizard, or '4' for Spock "))
@@ -228,6 +227,7 @@ while True:
         except:
             print("Invalid input, please try again.")
             continue
+    # logic for what to display
     opponent_art = art_list[opponent]
     player_art = art_list[player]
     opponent_choice = choice_list[opponent]
@@ -236,6 +236,7 @@ while True:
     print(f"The opponet has chosen {opponent_choice}!\n",opponent_art,'\n')
     print(f"You have chosen {player_choice}!\n",player_art,'\n')
 
+    # logic for tie
     if opponent == player:
         print("A match for the ages! It's a tie! Try again!")
         continue
@@ -243,6 +244,7 @@ while True:
         break
 
 # prints a response based on the choices made
+# ties are already checked above
 if (player_choice == ('scissors' or 'paper')) and (opponent_choice == ('paper' or 'scissors')):
     print("Scissors cut paper.")
 
@@ -273,16 +275,16 @@ elif (player_choice == ('spock' or 'scissors')) and (opponent_choice == ('scisso
 elif (player_choice == ('spock' or 'rock')) and (opponent_choice == ('rock' or 'spock')):
     print('Spock vaporizes rock.')
 
-
+# logic for win or loss
 if (player_choice == 'scissors' and opponent_choice == 'paper')\
     or (player_choice == 'scissors' and opponent_choice == 'lizard')\
-    or (player_choice == 'paper' and opponent_choice == 'rock')\
-    or (player_choice == 'paper' and opponent_choice == 'spock')\
-    or (player_choice == 'rock' and opponent_choice == 'scissors')\
-    or (player_choice == 'rock' and opponent_choice == 'lizard')\
-    or (player_choice == 'lizard' and opponent_choice == 'spock')\
-    or (player_choice == 'lizard' and opponent_choice == 'paper')\
-    or (player_choice == 'spock' and opponent_choice == 'scissors')\
-    or (player_choice == 'spock' and opponent_choice == 'rock'):
-    print("You Win")
+        or (player_choice == 'paper' and opponent_choice == 'rock')\
+            or (player_choice == 'paper' and opponent_choice == 'spock')\
+                or (player_choice == 'rock' and opponent_choice == 'scissors')\
+                    or (player_choice == 'rock' and opponent_choice == 'lizard')\
+                        or (player_choice == 'lizard' and opponent_choice == 'spock')\
+                            or (player_choice == 'lizard' and opponent_choice == 'paper')\
+                                or (player_choice == 'spock' and opponent_choice == 'scissors')\
+                                    or (player_choice == 'spock' and opponent_choice == 'rock'):
+                                    print("You Win")
 else: print("You lost!")
