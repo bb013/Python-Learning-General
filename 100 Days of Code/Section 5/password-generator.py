@@ -17,31 +17,25 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
-# grab letters using random
-letter_range = len(letters) - 1
+# grab letters using random and add to list
 letter_choice_list = []
 
 for letter in range(nr_letters):
-    random_letter = random.choice(letters)
-    letter_choice_list.append(random_letter)
+    letter_choice_list.append(random.choice(letters))
 #print(letter_choice_list)
 
-# grab symbols using random
-symbol_range = len(symbols) - 1
+# grab symbols using random and add to list
 symbol_choice_list = []
 
 for symbol in range(nr_symbols):
-    random_symbol = random.choice(symbols)
-    symbol_choice_list.append(random_symbol)
+    symbol_choice_list.append(random.choice(symbols))
 #print(symbol_choice_list)
 
-# grab numbers using random
-number_range = len(numbers) - 1
+# grab numbers using random and add to list
 number_choice_list = []
 
 for number in range(nr_numbers):
-    random_number = random.choice(numbers)
-    number_choice_list.append(random_number)
+    number_choice_list.append(random.choice(numbers))
 #print(number_choice_list)
 
 # create one list from all of it
