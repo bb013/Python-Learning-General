@@ -3,4 +3,4 @@
 
 Exercise files for the udemy course found at https://www.udemy.com/course/100-days-of-code/?src=sac&kw=100+days+of+co
 
-2022-12-23: Taking a short break to finish up some other projects but will be back soon
+2023-7-25: Progress has stalled due to major life changes and no longer having time to learn.
